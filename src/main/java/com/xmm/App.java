@@ -26,10 +26,13 @@ public class App {
         QueryRunner qRunner = new QueryRunner();
         //执行SQL查询，并获取结果 
         try {
-            List m=  qRunner.query(conn, "select * from yc_user_address limit 10",new MapListHandler());
+            List<Map<String, Object>> l=  qRunner.query(conn, "select * from yc_user_address limit 10",new MapListHandler());
         
-        //输出查询结果 
-            System.out.println(m);
+            //输出查询结果 
+            for(Map m:l){   
+                System.out.println(m);
+            }
+            
         } catch (SQLException e) {
             e.printStackTrace();
         }finally {
