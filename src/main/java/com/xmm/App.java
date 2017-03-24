@@ -29,7 +29,7 @@ public class App {
             List<Map<String, Object>> l=  qRunner.query(conn, "select * from yc_user_address limit 10",new MapListHandler());
         
             //输出查询结果 
-            for(Map m:l){   
+            for(Map m:l){
                 System.out.println(m);
             }
             
